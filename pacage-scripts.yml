@@ -1,0 +1,23 @@
+scripts:
+  develop: concurrent "nps watch.output" "nps nodemon.output"
+  produce: concurrent "nps watch.public" "nps nodemon.public"
+  build:
+    default: concurrent "nps build.output" "nps build.public"
+    output: nps clean.output babel.output
+    public: nps clean.public babel.public
+  watch:
+    default: concurrent "nps watch.output" "nps watch.public"
+    output: nps clean.output nodemon.output
+    public: nps clean.public nodemon.public
+  clean:
+    default: concurrent "nps clean.output" "nps clean.public"
+    output: rm -fr output/*
+    public: rm -fr public/*
+  babel:
+    default: concurrent "nps babel-node.output" "nps babel-node.public"
+    output: babel source/ -d output/
+    public: babel source/ -d public/
+  nodemon:
+    default: concurrent "nps nodemon.output" "nps nodemon.public"
+    output: nodemon -w source/ -x babel-node -r dotenv/config output/source.js
+    public: nodemon -w source/ -x babel-node -r dotenv/config public/source.js
