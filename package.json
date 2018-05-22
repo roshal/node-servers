@@ -3,6 +3,10 @@
   "scripts": {
     "~": "nps"
   },
+  "engines": {
+    "node": "^10.0.0",
+    "yarn": "^1.6.0"
+  },
   "dependencies": {
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
@@ -12,9 +16,12 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
-    "concurrent": "^0.3.2",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-2": "^6.24.1",
     "nodemon": "^1.17.4",
-    "nps": "^5.9.0"
+    "nps": "^5.9.0",
+    "nps-utils": "^1.5.0"
   }
 }

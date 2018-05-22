@@ -3,7 +3,7 @@ import {
 } from 'hapi'
 //
 const server = new p__hapi__server({
-	port: process.env.PORT,
+	port: process.env.PORT || 80,
 })
 server.route({
 	method: 'GET',

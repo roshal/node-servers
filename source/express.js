@@ -1,7 +1,6 @@
-import p__koa from 'koa'
-import p__koa_router from 'koa-router'
+import p__express from 'express'
 //
-const router = new p__koa_router({
+const router = new p__express.Router({
 	prefix: '/api',
 })
 router.all(
@@ -11,11 +10,11 @@ router.all(
 		await next()
 	},
 )
-const koa = new p__koa()
-koa.use(
+const express = new p__express()
+express.use(
 	router.routes(),
 )
-koa.listen(process.env.PORT || 80, function () {
+express.listen(process.env.PORT || 80, function () {
 	console.log('port', this.address().port)
 })
 console.log(router)
