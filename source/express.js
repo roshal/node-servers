@@ -4,7 +4,7 @@ const router = new p__express.Router({
 	prefix: '/api',
 })
 router.all(
-	/^\/api\/$/,
+	/^\/route\/$/,
 	async (context, next) => {
 		context.response.body = context.request.url
 		await next()
