@@ -9,6 +9,7 @@ export default () => {
 		output: {
 			path: p__path__join(__dirname, '..', 'output'),
 		},
+		devtool: 'source-map',
 		plugins: [
 			new p__uglifyjs_webpack_plugin({
 				uglifyOptions: {

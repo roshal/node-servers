@@ -8,17 +8,26 @@ const router = p__router({
 	strict: true,
 })
 // ok
-router.all('/route/', function (request, response) {
-	response.end(request.url)
-})
+const route = router.route('/route/')
+route.get(
+	(request, response) => {
+		response.end(request.url)
+	},
+)
 // no
-router.use('/use/', function (request, response) {
-	response.end(request.url)
-})
+router.use(
+	'/use/',
+	(request, response) => {
+		response.end(request.url)
+	},
+)
 // ok
-router.use('/use/$', function (request, response) {
-	response.end(request.url)
-})
+router.use(
+	'/use/$',
+	(request, response) => {
+		response.end(request.url)
+	},
+)
 server.on(
 	'request',
 	(request, response) => {

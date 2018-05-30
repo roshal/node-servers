@@ -20,3 +20,4 @@ koa.listen(process.env.PORT || 80, function () {
 	console.log('port', this.address().port)
 })
 console.log(router)
+// ok strict mode

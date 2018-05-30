@@ -8,7 +8,8 @@ const router = p__find_my_way({
 		response.end()
 	},
 })
-router.get(
+router.on(
+	'GET',
 	'/route/',
 	(request, response, params, store) => {
 		console.log(params)
