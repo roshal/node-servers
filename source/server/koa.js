@@ -1,11 +1,8 @@
 import p__koa from 'koa'
-import p__koa_router from 'koa-router'
 //
 const koa = new p__koa()
-//strict no
-koa.all(
-	'/route/',
-	async (context) => {
+koa.use(
+	(context) => {
 		context.response.body = context.request.url
 	},
 )

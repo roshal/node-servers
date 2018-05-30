@@ -23,11 +23,15 @@ export default () => {
 							loader: 'babel',
 							options: {
 								babelrc: false,
-								plugins: [
-									'transform-runtime',
-								],
 								presets: [
-									'env',
+									[
+										'env',
+										{
+											'targets': {
+												'node': true,
+											},
+										},
+									],
 									'flow',
 									'stage-2',
 								],
